@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Directory — Modern UI</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Minimal extra styles to ensure roll shows fully */
+    .roll-cell { white-space: nowrap; max-width: 260px; overflow: hidden; text-overflow: ellipsis; }
+    .roll-cell[title]:hover { cursor: help; }
+    /* ensure cgpa values are right aligned */
+    td.cgpa { text-align: right; }
+    /* small responsive tweak for very long roll numbers */
+    @media (max-width:980px){
+      .roll-cell { max-width: 180px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="logo">Student<span class="accent">Directory</span></div>
+      <div class="controls">
+        <input id="fileInput" type="file" accept=".csv" />
+        <button id="btnExport" class="btn primary">Export CSV</button>
+      </div>
+    </header>
+
+    <main class="main-grid">
+      <section class="panel form-panel">
+        <h2>Add Student</h2>
+        <form id="addForm">
+          <label>Roll
+            <input id="roll" type="text" required />
+          </label>
+          <label>Name
+            <input id="name" type="text" required />
+          </label>
+          <label>Department
+            <input id="dept" type="text" required />
+          </label>
+          <label>CGPA
+            <input id="cgpa" type="number" step="0.01" min="0" max="10" required />
+          </label>
+          <div class="row">
+            <button type="submit" class="btn primary">Add</button>
+            <button type="button" id="btnClear" class="btn">Clear</button>
+          </div>
+        </form>
+
+        <hr />
+        <h3>Quick Search</h3>
+        <div class="search-row">
+          <input id="searchInput" placeholder="Search by roll or name..." />
+          <button id="btnSearch" class="btn">Search</button>
+          <button id="btnShowAll" class="btn">Show All</button>
+        </div>
+      </section>
+
+      <section class="panel table-panel">
+        <h2>Students</h2>
+        <div id="tableWrap" class="table-wrap"></div>
+        <div class="pagination" id="pagination"></div>
+      </section>
+
+      <aside class="panel stats-panel">
+        <h2>Statistics</h2>
+        <div id="stats">
+          <div class="stat-row"><span>Total:</span><span id="statTotal">0</span></div>
+          <div class="stat-row"><span>Avg CGPA:</span><span id="statAvg">0.00</span></div>
+          <div class="stat-row"><span>Highest:</span><span id="statHigh">-</span></div>
+          <div class="stat-row"><span>Lowest:</span><span id="statLow">-</span></div>
+        </div>
+
+        <h3>CGPA Distribution</h3>
+        <div id="distribution" class="distribution"></div>
+
+        <div style="margin-top:12px;">
+          <button id="btnDeleteSelected" class="btn warn">Delete Selected</button>
+          <button id="btnImportExample" class="btn">Load Example</button>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <small>Local UI — import/export CSV. Use the provided C program to run CLI DSA ops on the same CSV.</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
