@@ -1,6 +1,7 @@
 # 📘 Student Directory Management System
 
-> **A Hybrid Data Structures & Algorithms (DSA) Project** > Combining a modern Web UI with a classic C Language CLI using Linked Lists.
+> **A Hybrid Data Structures & Algorithms (DSA) Project**
+> Combining a modern Web UI with a classic C Language CLI using Linked Lists.
 
 ![Project Status](https://img.shields.io/badge/Status-Active-success)
 ![Language](https://img.shields.io/badge/Language-C-blue)
@@ -35,7 +36,7 @@ Both interfaces share a common **CSV storage system**, allowing data entered in 
 * **Core DSA:** Implements a **Singly Linked List** from scratch.
 * **File I/O:** Loads and Saves to the same CSV format used by the web app.
 * **Robust Input:** Handles complex roll number strings (not just integers).
-* **Menu-Driven:** easy-to-use terminal menu for adding, searching, and deleting.
+* **Menu-Driven:** Easy-to-use terminal menu for adding, searching, and deleting.
 
 ---
 
@@ -46,7 +47,7 @@ Both interfaces share a common **CSV storage system**, allowing data entered in 
 | **Frontend** | HTML5, CSS3 | Layout and styling of the dashboard. |
 | **Logic (Web)** | Vanilla JavaScript | DOM manipulation, CSV parsing, and Math stats. |
 | **Backend (CLI)** | C Language | Core application logic. |
-| **Data Structure** | Linked List | dynamic memory management for student records. |
+| **Data Structure** | Linked List | Dynamic memory management for student records. |
 | **Storage** | CSV | Universal data exchange format. |
 
 ---
@@ -77,43 +78,6 @@ classDiagram
 
     LinkedList --> Student : contains
     Student --> Student : next
-📂 Project Structure
-Plaintext
-
-StudentDirectory/
-│
-├── index.html         # Main Web Dashboard
-├── style.css          # UI Styling
-├── app.js             # Web Logic (UI + Stats + CSV handling)
-│
-├── student_cli.c      # C DSA Program (Linked List Implementation)
-│
-└── data.csv       # Shared Dataset (Source of Truth)
-🗂️ Data Format (CSV)
-The application uses a standard CSV format. Note that Roll Numbers are treated as strings to support academic formats.
-
-Example students.csv:
-
-Code snippet
-
-roll,name,dept,cgpa
-1/24/SET/BCS/145,Riya Sharma,CSE,8.70
-CSE21-007,Arjun Mehta,ECE,7.90
-REG-2024-BTECH-122,John Doe,MECH,6.50
-🚀 How to Run
-1️⃣ Web Version
-Navigate to the project folder.
-
-Double-click index.html.
-
-The app will open in your default browser.
-
-To Load Data: Click "Choose File" and select students.csv.
-
-To Save Data: Click "Export CSV" to download the updated list.
-
-2️⃣ C CLI Version
-Ensure you have a C compiler (like GCC) installed.
 
 Compile:
 
